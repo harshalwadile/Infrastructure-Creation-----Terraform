@@ -50,7 +50,7 @@ provider "aws" {
 	
 	  name                        = "om_terra_ELK"
 	  ami                         = "${data.aws_ami.amazon_linux.id}"
-	  instance_type               = "t2.micro"
+	  instance_type               = "t2.medium"
 	  subnet_id                   = "${element(data.aws_subnet_ids.all.ids, 0)}"
 	  vpc_security_group_ids      = ["${module.security_group.this_security_group_id}"]
 	  associate_public_ip_address = true
